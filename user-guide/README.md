@@ -2,12 +2,49 @@
 
 PhysiCell Studio is a graphical tool to simplify PhysiCell model editing. It provides a multi-tabbed GUI that allows graphical editing of the model and its associated XML, including the creation/deletion of fundamental objects, e.g., substrates (or signals) in the microenvironment, and cell types. It also lets users run their model and interactively visualize results, allowing for more rapid model refinement.
 
+This document tries to provide brief, but sufficient, guidance on using the Studio - at least its contents (not the challenges involved in developing your particular model). If you experience problems or have questions, please contact us using an appropriate PhysiCell community Slack channel or the Issues section of this GitHub repository. The latter is preferred when reporting a fatal error using the Studio. We also welcome Pull Requests in the Studio's repository (see instructions there) for bug fixes and suggested improvements.
+
+This Guide will be updated as the Studio itself is updated, however there may be a lag. Therefore, if you're running a recent release of the Studio, you may notice some differences in the content described here.
+
+---
+## Dependencies
+
+See the README on the Studio GitHub repository for its dependencies.
+
+---
+## Running the Studio
+
+There are two primary ways to run the Studio:
+
+1) from a PhysiCell directory: if you have downloaded PhysiCell and are either just learning it, e.g., compiling and running the sample projects, or are actively building your own model, you might run the Studio (installed in another directory) from the command line as follows:
+```
+python <path-to-Studio-directory>/bin/studio.py -e <name-of-executable-model>
+```
+Note:
+* there are ways to create an alias for this command, thereby shortening it, depending on your operating system
+* you may need to prefix your executable name with `./`, depending on your PATH environment variable
+* when you File->Save or Run the model, the configuration file (.xml) will be updated. If you want to retain your original .xml, you should make a copy
+
+2) from the Studio (root) directory:
+```
+python bin/studio.py
+```
+Note:
+* unless you're running from a "bundled" Studio package which includes a sample executable model, this will only let you edit your model's .xml
+* you can copy an executable from somewhere else into the Studio root directory and then Run it locally
+
+A third use case for the Studio is to use it *only* for plotting results (/output) from your model. In that case, you would typically run it from the root PhysiCell directory and in the `Plot` tab, be sure to reference the correct output directory (folder).
+
+---
+## Studio Overview
+
+
 ![](./images/tabs_only.png)
 
 [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ] 
 
 ---
-# Menu: File -> Samples
+## Menu: File -> Samples
 
 We load a PhysiCell sample model to illustrate the contents of the tabs. NOTE: the model (.xml) being loaded from the Studio's `/config` folder has been "flattened". The Studio cannot properly parse a legacy "hierarchical" .xml from PhysiCell where a `cell_definition` may refer to a "parent" in its attributes.
 
