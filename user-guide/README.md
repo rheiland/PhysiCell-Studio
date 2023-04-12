@@ -103,11 +103,52 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 ---
 <details>
   <summary>Expand to show Cell Types subtabs</summary>
+
   ### Cycle
+  <img src="./images/cell_cycle_virus.png" width="50%">
    Define the cycle parameters for this cell type.
   
   ### Death
+  <img src="./images/cell_death_virus.png" width="50%">
+
    Define the death parameters for this cell type.
+
+  ### Volume
+  <img src="./images/cell_volume_virus.png" width="50%">
+
+   Define the volume parameters for this cell type.
+
+  ### Mechanics
+  <img src="./images/cell_mechanics_virus.png" width="50%">
+
+   Define the mechanics parameters for this cell type.
+
+  ### Motility
+  <img src="./images/cell_motility_virus_epi.png" width="50%">
+
+  <img src="./images/cell_motility_virus_mac.png" width="50%">
+
+   Define the motility parameters for this cell type.
+
+  ### Secretion
+  <img src="./images/cell_secretion_virus_epi.png" width="50%">
+
+   Define the secretion/uptake parameters for this cell type.
+
+  ### Interactions
+  <img src="./images/cell_interactions_virus.png" width="50%">
+
+   Define the interactions parameters for this cell type.
+
+  ### Intracellular
+  <img src="./images/cell_intracellular_virus.png" width="50%">
+
+   Define the intracellular parameters for this cell type.
+
+  ### Custom Data
+  <img src="./images/cell_customdata_virus.png" width="50%">
+
+   Define the custom data parameters for this cell type.
 
 
 </details>
