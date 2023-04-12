@@ -30,8 +30,7 @@ Note:
 python bin/studio.py
 ```
 Note:
-* unless you're running from a "bundled" Studio package which includes a sample executable model, this will only let you edit your model's .xml
-* you can copy an executable from somewhere else into the Studio root directory and then Run it locally
+* unless you're running from a "bundled" Studio package which includes a sample executable model, the above command will only let you *edit* a model's .xml and not run an executable. However, you can copy an executable from somewhere else into the Studio root directory and then Run it from there.
 
 A third use case for the Studio is to use it *only* for plotting results (/output) from your model. In that case, you would typically run it from the root PhysiCell directory and in the `Plot` tab, be sure to reference the correct output directory (folder).
 
@@ -56,6 +55,7 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 ## Config Basics
 
 ![](./images/config_virus.png)
+
 * === Domain ===
 * define the model domain size (we recommend leaving dx=dy=dz=20). A 2D model will have Z range: [-dz/2, dz/2, dz]
 *  `virtual walls` - if checked, indicates that cells should bounce away from the domain boundaries when they get too close
