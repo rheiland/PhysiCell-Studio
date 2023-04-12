@@ -130,10 +130,7 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 ---
 # Plot
 
-![](./images/plot_virus_t0.png)
-![](./images/plot_virus_t1.png)
-![](./images/plot_virus_t2.png)
-![](./images/plot_virus_t3.png)
+<img src="./images/plot_virus_t0.png" width="100%"><img src="./images/plot_virus_t1.png" width="100%"><img src="./images/plot_virus_t2.png" width="100%"><img src="./images/plot_virus_t3.png" width="100%">
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
 
