@@ -134,7 +134,7 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 
 <img src="./images/plot_virus_t0.png" width="50%"><img src="./images/plot_virus_t1.png" width="50%"><img src="./images/plot_virus_t2.png" width="50%"><img src="./images/plot_virus_t3.png" width="50%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
 
 ---
 # Legend
@@ -144,4 +144,4 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 * The color legend associated with cells' SVG
 * this tab will likely go away in the near future and be replaced by a button in the Plot tab
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]

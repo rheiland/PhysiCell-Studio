@@ -45,7 +45,7 @@ A third use case for the Studio is to use it *only* for plotting results (/outpu
 
 <img src="./images/tabs_only.png" width="0%">
 
-[[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ] 
+[[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ] 
 
 ---
 ## Menu: File -> Samples
@@ -75,7 +75,7 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 * === Initial conditions of cells ===
 * `enable` - check if you are providing a text file that contains data for the initial conditions of cells, including their positions, cell types, etc.
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 ## Microenvironment
@@ -92,7 +92,7 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 * `calculate gradients` - check if you want substrate gradients to be computed at each "Mechanics dt" timestep. You would need to do so, for example, if certain cell types were chemotaxing (rf. Cell Types | Motility subtab).
 * `track in agents` - check if you want cells to keep track of the substrate concentration during secretion
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 ## Cell Types
@@ -109,7 +109,7 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 
 User parameters are general model parameters (as opposed to Cell Types | Custom Data parameters which are specific to cell data). User parameters are accessed in your model's C++ code. Search for `parameters.ints, parameters.doubles`, etc, in various sample projects' `custom.cpp` files. You can click/drag a column separator in this table to change its width. Unfortunately, that information is not retained if you exit the Studio and start it again.
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # ICs (Initial Conditions)
@@ -120,21 +120,21 @@ The ICs tab provides a graphical tool that lets you create fairly simple initial
 
 The typical steps are: select the region type, fill type, # cells (if fill type = random), center of region, R1 and R2. Then click `Plot` to see if they appear where you expect. If not, either click `Undo last` or `Clear all`. Repeat if you have more regions to fill with ICs. When you have the ICs you want, click `Save` to write out the .csv file to the specified folder and filename. The `use cell type names` are the newer (v2 format) way of providing a cells.csv file. If that box is unchecked, the .csv file will be written with cell type IDs instead (v1 format).
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Run
 
 <img src="./images/run_virus.png" width="0%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Plot
 
 <img src="./images/plot_virus_t0.png" width="0%"><img src="./images/plot_virus_t1.png" width="0%"><img src="./images/plot_virus_t2.png" width="0%"><img src="./images/plot_virus_t3.png" width="0%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Legend
@@ -144,4 +144,4 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 * The color legend associated with cells' SVG
 * this tab will likely go away in the near future and be replaced by a button in the Plot tab
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
