@@ -104,8 +104,11 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 <details>
   <summary>Expand to show Cell Types subtabs</summary>
 
+[[cycle](#cycle)] [[death](#death)] [[volume](#volume)] [[mechanics](#mechanics)] [[motility](#motility)] [[secretion](#secretion)] [[interactions](#interactions)] [[intracellular](#intracellular)] [[custom-data](#custom-data)] 
+
   ### Cycle
   <img src="./images/cell_cycle_virus.png" width="50%">
+
    Define the cycle parameters for this cell type.
   
   ### Death
