@@ -127,7 +127,7 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 
 <img src="./images/run_virus.png" width="50%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
 
 ---
 # Plot
