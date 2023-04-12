@@ -43,9 +43,9 @@ A third use case for the Studio is to use it *only* for plotting results (/outpu
 ## Studio Overview
 
 
-<img src="./images/tabs_only.png" width="50%">
+<img src="./images/tabs_only.png" width="0%">
 
-[[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ] 
+[[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ] 
 
 ---
 ## Menu: File -> Samples
@@ -54,12 +54,12 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 
 ## NOTE: the model (.xml) being loaded from the Studio's `/config` folder has been "flattened". The Studio cannot properly parse a legacy "hierarchical" .xml from PhysiCell where a `cell_definition` may refer to a "parent" in its attributes.
 
-<img src="./images/menu_file_sample_virus.png" width="50%">
+<img src="./images/menu_file_sample_virus.png" width="0%">
 
 ---
 ## Config Basics
 
-<img src="./images/config_virus.png" width="50%">
+<img src="./images/config_virus.png" width="0%">
 
 * === Domain ===
 * define the model domain size (we recommend leaving dx=dy=dz=20). A 2D model will have Z range: [-dz/2, dz/2, dz]
@@ -75,12 +75,12 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 * === Initial conditions of cells ===
 * `enable` - check if you are providing a text file that contains data for the initial conditions of cells, including their positions, cell types, etc.
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 ## Microenvironment
 
-<img src="./images/microenv_virus.png" width="50%">
+<img src="./images/microenv_virus.png" width="0%">
 
 * Define the substrates (or signals) used in the model
 * Selecting one in the box on the left will update the parameters on the right.
@@ -92,12 +92,12 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 * `calculate gradients` - check if you want substrate gradients to be computed at each "Mechanics dt" timestep. You would need to do so, for example, if certain cell types were chemotaxing (rf. Cell Types | Motility subtab).
 * `track in agents` - check if you want cells to keep track of the substrate concentration during secretion
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 ## Cell Types
 
-<img src="./images/celltypes_virus.png" width="50%">
+<img src="./images/celltypes_virus.png" width="0%">
 
 * This tab is used to define the phenotype for each cell type and therefore exposes a large number of parameters. Note that it has subtabs, one for each phenotypic cell behavior.
 * ...
@@ -105,46 +105,46 @@ We load a PhysiCell sample model to illustrate the contents of the tabs.
 ---
 ## User Params
 
-<img src="./images/user_params_virus.png" width="50%">
+<img src="./images/user_params_virus.png" width="0%">
 
 User parameters are general model parameters (as opposed to Cell Types | Custom Data parameters which are specific to cell data). User parameters are accessed in your model's C++ code. Search for `parameters.ints, parameters.doubles`, etc, in various sample projects' `custom.cpp` files. You can click/drag a column separator in this table to change its width. Unfortunately, that information is not retained if you exit the Studio and start it again.
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # ICs (Initial Conditions)
 
-<img src="./images/ics_virus.png" width="50%">
+<img src="./images/ics_virus.png" width="0%">
 
 The ICs tab provides a graphical tool that lets you create fairly simple initial conditions of cells. For now, those ICs are just x,y,z positions and cell type (by name or ID). The currently supported geometric regions in which cells can be placed are boxes (rectangles) and annuli (or disks). The center of either of those regions is specified using x0,y0,z0. R1 and R2 represent the distances/radii. For boxes, R1= (absolute) x-distance from the center to each left/right edge; R2= y-distance from the center to each top/bottom edge; For an annulus: R1= inner radius; R2= outer radius (if R1=0, the shape becomes a disk). Each region can be filled in two different ways: randomly or hex-filled. You only specify the # of cells for the random fill. Note that you can select a cell type from the combobox at the top. The size (radius) of each cell is determined by the Cell Types | Volume (total) parameter.
 
 The typical steps are: select the region type, fill type, # cells (if fill type = random), center of region, R1 and R2. Then click `Plot` to see if they appear where you expect. If not, either click `Undo last` or `Clear all`. Repeat if you have more regions to fill with ICs. When you have the ICs you want, click `Save` to write out the .csv file to the specified folder and filename. The `use cell type names` are the newer (v2 format) way of providing a cells.csv file. If that box is unchecked, the .csv file will be written with cell type IDs instead (v1 format).
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Run
 
-<img src="./images/run_virus.png" width="50%">
+<img src="./images/run_virus.png" width="0%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Plot
 
-<img src="./images/plot_virus_t0.png" width="50%">
-<img src="./images/plot_virus_t1.png" width="50%">
-<img src="./images/plot_virus_t2.png" width="50%">
-<img src="./images/plot_virus_t3.png" width="50%">
+<img src="./images/plot_virus_t0.png" width="0%">
+<img src="./images/plot_virus_t1.png" width="0%">
+<img src="./images/plot_virus_t2.png" width="0%">
+<img src="./images/plot_virus_t3.png" width="0%">
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
 
 ---
 # Legend
 
-<img src="./images/legend_virus.png" width="50%">
+<img src="./images/legend_virus.png" width="0%">
 
 * The color legend associated with cells' SVG
 * this tab will likely go away in the near future and be replaced by a button in the Plot tab
 
-[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics)] [[Run](#run)] [[Plot](#plot)] [[Legend](#legend) ]
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run) [[Plot](#plot) [[Legend](#legend) ]
