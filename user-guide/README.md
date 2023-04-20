@@ -248,8 +248,14 @@ python bin/studio.py -e project -c config/simple3D_test1.xml -3
 ```
 
 <img src="./images/plot3D_cell_types.png" width="70%">
+By default, we plot cells colored by cell type.
+
 <img src="./images/plot3D_pressure_dynamic.png" width="70%">
+* click `partial` to populate the combobox then select `pressure`
+* the colorbar range will dynamically update to the min/max of the cells' pressure values for that frame in time
+
 <img src="./images/plot3D_pressure_fixed.png" width="70%">
+* after checking `fix`, we can manually specify the colorbar range min/max for all frames
 
 
 ### 3D Plotting reminders
