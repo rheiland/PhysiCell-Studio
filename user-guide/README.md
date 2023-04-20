@@ -216,9 +216,19 @@ x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 When you start a simulation (using the Run tab) and output files are generated, you can begin visualizing results. In the Plot tab, click `Play` to 
 start rendering those files. The `Play` button will switch to `Pause`, so you can halt and restart easily. The two primary objects to visualize are cells and substrates, each with a checkbox toggle. Assuming you selected "SVG" in the `Config Basics` tab ("Save data" section), then .svg files will be written (at the specified time interval of the simulation) and can be plotted when the `.svg` radio button is selected. Your model's C++ code should specify the cell colors for the SVG (rf. `Legend(.svg)` button). Alternatively, you can plot cells' scalar values when the `.mat` radio button is selected. There are many types of scalar variables for cells that are stored in the .mat files. You can see the entire list using the `full list` button, then click the combobox above it. The `partial` button will populate the combobox with a more customary subset of scalar variables. Note that you can select a colorbar for the cells' scalars and can fix lower/upper bounds for the values, if that's desired. Otherwise, the colorbar will be dynamic and use the min/max of the current frame of data.
 
-<img src="./images/plot_virus_t0.png" width="100%"><img src="./images/plot_virus_t1.png" width="100%"><img src="./images/plot_virus_t2.png" width="100%"><img src="./images/plot_virus_t3.png" width="100%">
+We show four snapshots of .svg data during the time series of the virus-macrophage simulation.
 
-<img src="./images/population_plot_virus.png" width="100%">
+<img src="./images/plot_virus_t0.png" width="75%"><img src="./images/plot_virus_t1.png" width="75%"><img src="./images/plot_virus_t2.png" width="75%"><img src="./images/plot_virus_t3.png" width="75%">
+
+---
+<img src="./images/plot_virus_pressure.png" width="75%">
+
+Plotting the cells' `pressure` scalar (.mat) field.
+
+---
+
+<img src="./images/population_plot_virus.png" width="50%">
+
 The `Population plot` button will plot the cell (types) populations over the entire simulation (or however far it has currently gotten). This will appear in a separate popup window (and sometimes may get hidden behind the main Studio window).
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
