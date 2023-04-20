@@ -176,7 +176,7 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 
 In the following image, we demonstrate with a simple example. Here, we have loaded the template model (hence the `default` cell type). With the selected geometric region `annulus/disk`, `random fill`, `# cells` = 100, and the specified center and radii, we click `Plot` to see the result. Note that since R1 > 0, it will indeed be an annulus; if R1=0, we would have a disk.
 
-![](./images/ics_template_annulus_100.png)
+![](./images/ics_template_annulus_100.png  width="75%)
 
 In the following, we create ICs for two cell types, each in a different region.
 * `Clear all` to start fresh
@@ -185,8 +185,8 @@ In the following, we create ICs for two cell types, each in a different region.
 * if we make a mistake for one of the Plots, use `Undo last`
 * provide a unique .csv filename instead of `cell.csv` if you want, and click `Save`
 
-![](./images/ics_disk_hex.png)
-![](./images/ics_disk_rect.png)
+![](./images/ics_disk_hex.png width="75%)
+![](./images/ics_disk_rect.png width="75%)
 
 The .csv file should look something like this:
 ```
