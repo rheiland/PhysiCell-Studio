@@ -49,30 +49,32 @@ A third use case for the Studio is to use it *only* for plotting results (/outpu
 ---
 ## Menu: File -> Samples
 
-We load a PhysiCell sample model to illustrate the contents of the tabs. 
+We load a PhysiCell sample model, the virus-macrophage, to illustrate the contents of the tabs. 
 
 ## NOTE: the model (.xml) being loaded from the Studio's `/config` folder has been "flattened". The Studio cannot properly parse a legacy "hierarchical" .xml from PhysiCell where a `cell_definition` may refer to a "parent" in its attributes.
 
-![](./images/menu_file_sample_virus.png)
+<img src="./images/menu_file_sample_virus.png" width="30%">
 
 ---
 ## Config Basics
 
-![](./images/config_virus.png)
+<img src="./images/config_virus.png" width="70%">
+
 
 * === Domain ===
 * define the model domain size (we recommend leaving dx=dy=dz=20). A 2D model will have Z range: [-dz/2, dz/2, dz]
-*  `virtual walls` - if checked, indicates that cells should bounce away from the domain boundaries when they get too close
-*  `disable springs` - if checked, do not perform elastic spring attachments between cells
 * === Times ===
 * `Max Time` - of the simulation
 * `/Mechanics/Phenotype dt` - 3 time scales in a PhysiCell model (rf. the PhysiCell method paper). Only modify if you're an advanced user.
 * === Misc runtime params ===
 * `# threads` - # of OpenMP threads (to help speed up calculations)
-* `output folder` - where the output files will be written; relative to where you start the simulation.
+* `output folder` - where the output files will be written; relative to where you Run the simulation.
 * `Save data(intervals)` - there are (primarily) two types of output files saved by PhysiCell: `SVG` (.svg; for cells' positions, sizes, colors) and `Full` (.mat; for substrate concentrations and custom data). Currently, in the Plot tab, when you plot *both* cells and substrates, it assumes those files were written at the same simulation time. Therefore, you should provide the *same* interval value for both if you plan to plot both. However, if you only plan to plot cells' SVG files, then you can set the `Full` interval to a very high value or simply uncheck it to not have any substrate or cells' custom data saved.
 * === Initial conditions of cells ===
 * `enable` - check if you are providing a text file that contains data for the initial conditions of cells, including their positions, cell types, etc.
+* === Cells' global behaviors
+*  `virtual walls` - if checked, indicates that cells should bounce away from the domain boundaries when they get too close
+*  `disable springs` - if checked, do not perform elastic spring attachments between cells
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
@@ -176,7 +178,7 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 
 In the following image, we demonstrate with a simple example. Here, we have loaded the template model (hence the `default` cell type). With the selected geometric region `annulus/disk`, `random fill`, `# cells` = 100, and the specified center and radii, we click `Plot` to see the result. Note that since R1 > 0, it will indeed be an annulus; if R1=0, we would have a disk.
 
-![](./images/ics_template_annulus_100.png  width="75%)
+<img src="./images/ics_template_annulus_100.png" width="70%">
 
 In the following, we create ICs for two cell types, each in a different region.
 * `Clear all` to start fresh
@@ -185,10 +187,11 @@ In the following, we create ICs for two cell types, each in a different region.
 * if we make a mistake for one of the Plots, use `Undo last`
 * provide a unique .csv filename instead of `cell.csv` if you want, and click `Save`
 
-![](./images/ics_disk_hex.png width="75%)
-![](./images/ics_disk_rect.png width="75%)
+<img src="./images/ics_disk_hex.png" width="70%">
+<img src="./images/ics_disk_rect.png" width="70%">
 
-The .csv file should look something like this:
+
+The .csv file should contain content that looks similar to the following. Note that since we had `use cell type names` checked, each line will include the name of that cell type. Also, in this case, there will be a single header line at the top that starts with `x` (for the x-coordinate column). If we don't check the `use cell type names`, this is the older style of .csv and it will use cell IDs (integer values) instead of cell type names. And there will not be a header line.
 ```
 x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 -81.2695257531903,-285.4287579015727,0.0,default
@@ -214,7 +217,7 @@ x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 # Plot
 
 When you start a simulation (using the Run tab) and output files are generated, you can begin visualizing results. In the Plot tab, click `Play` to 
-start rendering those files. The `Play` button will switch to `Pause`, so you can halt and restart easily. The two primary objects to visualize are cells and substrates, each with a checkbox toggle. Assuming you selected "SVG" in the `Config Basics` tab ("Save data" section), then .svg files will be written (at the specified time interval of the simulation) and can be plotted when the `.svg` radio button is selected. Your model's C++ code can specify unique cell colors for the SVG (related to, but not necessarily the same as, those in `Legend(.svg)` button). 
+start rendering those results. The `Play` button will switch to `Pause`, so you can halt and restart easily. The two primary objects to visualize are cells and substrates, each with a checkbox toggle. Assuming you selected "SVG" in the `Config Basics` tab ("Save data" section), then .svg files will be written (at the specified time interval of the simulation) and can be plotted when the `.svg` radio button is selected. Your model's C++ code can specify unique cell colors for the SVG (related to, but not necessarily the same as, those in `Legend(.svg)` button). 
 
 Alternatively, you can plot cells' scalar values when the `.mat` radio button is selected. There are many types of scalar variables for cells that are stored in the .mat files. You can see the entire list using the `full list` button, then click the combobox above it. These scalar variables will be a combination of hard-coded ones by PhysiCell and model-specific ones defined in the `Cell Types | Custom Data` subtab. The `partial` button will populate the combobox with a more customary subset of scalar variables. Note that you can select a colorbar for the cells' scalars and can fix lower/upper bounds for the values, if that's desired. Otherwise, the colorbar will be dynamic and use the min/max of the current frame of data.
 
@@ -236,6 +239,18 @@ The `Population plot` button will plot the cell (types) populations over the ent
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
 ---
+# Plot 3D
+
+While not quite as advanced as 2D plotting, it is also possible to run and visualize results from a 3D model. The UI for 3D plots is continuing to evolve. To run a 3D model, you need to use the `-3` or `--3D` argument, e.g.,
+```
+# if running from the Studio root folder:
+python bin/studio.py -e project -c config/simple3D_test1.xml -3
+```
+
+<img src="./images/plot3D_cell_types.png" width="70%">
+<img src="./images/plot3D_pressure_dynamic.png" width="70%">
+<img src="./images/plot3D_pressure_fixed.png" width="70%">
+
 
 ### 3D Plotting reminders
 
