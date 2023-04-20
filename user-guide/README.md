@@ -170,12 +170,37 @@ User parameters are general model parameters (as opposed to Cell Types | Custom 
 ---
 # ICs (Initial Conditions)
 
-![](./images/ics_virus.png)
-
 The ICs tab provides a graphical tool that lets you create fairly simple initial conditions of cells. For now, those ICs are just x,y,z positions and cell type (by name or ID). The currently supported geometric regions in which cells can be placed are boxes (rectangles) and annuli (or disks). The center of either of those regions is specified using x0,y0,z0. R1 and R2 represent the distances/radii. For boxes, R1= (absolute) x-distance from the center to each left/right edge; R2= y-distance from the center to each top/bottom edge; For an annulus: R1= inner radius; R2= outer radius (if R1=0, the shape becomes a disk). Each region can be filled in two different ways: randomly or hex-filled. You only specify the # of cells for the random fill. Note that you can select a cell type from the combobox at the top. The size (radius) of each cell is determined by the Cell Types | Volume (total) parameter.
 
 The typical steps are: select the region type, fill type, # cells (if fill type = random), center of region, R1 and R2. Then click `Plot` to see if they appear where you expect. If not, either click `Undo last` or `Clear all`. Repeat if you have more regions to fill with ICs. When you have the ICs you want, click `Save` to write out the .csv file to the specified folder and filename. The `use cell type names` are the newer (v2 format) way of providing a cells.csv file. If that box is unchecked, the .csv file will be written with cell type IDs instead (v1 format).
 
+In the following image, we demonstrate with a simple example. Here, we have loaded the template model (hence the `default` cell type). With the selected geometric region `annulus/disk`, `random fill`, `# cells` = 100, and the specified center and radii, we click `Plot` to see the result. Note that since R1 > 0, it will indeed be an annulus; if R1=0, we would have a disk.
+
+![](./images/ics_template_annulus_100.png)
+
+In the following, we create ICs for two cell types, each in a different region.
+* `Clear all` to start fresh
+* select cell type=`default`; create a hex-filled disk; Plot
+* select cell type=`ctype2`; create a hex-filled rectangle; Plot
+* if we make a mistake for one of the Plots, use `Undo last`
+* provide a unique .csv filename instead of `cell.csv` if you want, and click `Save`
+
+![](./images/ics_disk_hex.png)
+![](./images/ics_disk_rect.png)
+
+The .csv file should look something like this:
+```
+x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
+-81.2695257531903,-285.4287579015727,0.0,default
+-64.44410465728185,-285.4287579015727,0.0,default
+-47.618683561373416,-285.4287579015727,0.0,default
+-30.793262465464977,-285.4287579015727,0.0,default
+...
+422.0635527397712,424.27452590563917,0.0,ctype2
+380.0,438.8457680040665,0.0,ctype2
+396.82542109590844,438.8457680040665,0.0,ctype2
+413.65084219181693,438.8457680040665,0.0,ctype2
+```
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
 ---
@@ -188,7 +213,13 @@ The typical steps are: select the region type, fill type, # cells (if fill type 
 ---
 # Plot
 
+When you start a simulation (using the Run tab) and output files are generated, you can begin visualizing results. In the Plot tab, click `Play` to 
+start rendering those files. The `Play` button will switch to `Pause`, so you can halt and restart easily. The two primary objects to visualize are cells and substrates, each with a checkbox toggle. Assuming you selected "SVG" in the `Config Basics` tab ("Save data" section), then .svg files will be written (at the specified time interval of the simulation) and can be plotted when the `.svg` radio button is selected. Your model's C++ code should specify the cell colors for the SVG (rf. `Legend(.svg)` button). Alternatively, you can plot cells' scalar values when the `.mat` radio button is selected. There are many types of scalar variables for cells that are stored in the .mat files. You can see the entire list using the `full list` button, then click the combobox above it. The `partial` button will populate the combobox with a more customary subset of scalar variables. Note that you can select a colorbar for the cells' scalars and can fix lower/upper bounds for the values, if that's desired. Otherwise, the colorbar will be dynamic and use the min/max of the current frame of data.
+
 <img src="./images/plot_virus_t0.png" width="100%"><img src="./images/plot_virus_t1.png" width="100%"><img src="./images/plot_virus_t2.png" width="100%"><img src="./images/plot_virus_t3.png" width="100%">
+
+<img src="./images/population_plot_virus.png" width="100%">
+The `Population plot` button will plot the cell (types) populations over the entire simulation (or however far it has currently gotten). This will appear in a separate popup window (and sometimes may get hidden behind the main Studio window).
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
