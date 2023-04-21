@@ -295,5 +295,10 @@ For 3D plotting, the following are useful commands to affect the display and mod
 
   * Keypress w: modify the representation of all actors so that they are wireframe.
   
+
 ---
-  
+# Community Tools
+
+The Studio provides interfaces to other tools used in the broader modeling community. For example, it is possible to export some of your PhysiCell output data into a format for [Simularium](https://simularium.allencell.org/) and then load that file into their [viewer](https://simularium.allencell.org/viewer) to visualilze in your browser. 
+
+<img src="./images/simularium_test1.png" width="70%">
