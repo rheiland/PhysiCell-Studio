@@ -1,7 +1,6 @@
 # PhysiCell Studio: User Guide
 
-[[full images](README.md)]
-[[medium images](README-medium-images.md)]
+[[with images](README.md)]
 [[no images](README-no-images.md)]
 
 PhysiCell Studio is a graphical tool to simplify PhysiCell model editing. It provides a multi-tabbed GUI that allows graphical editing of the model and its associated XML, including the creation/deletion of fundamental objects, e.g., substrates (or signals) in the microenvironment, and cell types. It also lets users run their model and interactively visualize results, allowing for more rapid model refinement.
