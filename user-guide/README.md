@@ -268,7 +268,8 @@ python bin/studio.py -e project -c config/simple3D_test1.xml -3
 * after checking `fix`, we can manually specify the colorbar range min/max for all frames
 
 
-### 3D Plotting reminders
+<details>
+  <summary><h3>Expand for 3D Plotting interaction hints</h3></summary>
 
 For 3D plotting, the following are useful commands to affect the display and mode of interaction:
 
@@ -292,10 +293,9 @@ For 3D plotting, the following are useful commands to affect the display and mod
 
   * Keypress s: modify the representation of all actors so that they are surfaces.
 
-  * Keypress u: invoke the user-defined function. Typically, this keypress will bring up an interactor that you can type commands in.
-
   * Keypress w: modify the representation of all actors so that they are wireframe.
   
+</details>
 
 ---
 # Community Tools
