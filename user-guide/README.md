@@ -80,7 +80,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Microenvironment
 
-![](./images/microenv_virus.png)
+<img src="./images/microenv_virus.png" width="70%">
 * Define the substrates (or signals) used in the model
 * Selecting one in the box on the left will update the parameters on the right.
 * The `New` button will create a new substrate with default parameters
@@ -96,7 +96,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Cell Types
 
-![](./images/celltypes_virus.png)
+<img src="./images/celltypes_virus.png" width="70%">
 
 * This tab is used to define the phenotype for each cell type and therefore exposes a large number of parameters. Note that it has subtabs, one for each phenotypic cell behavior.
 * ...
@@ -162,7 +162,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## User Params
 
-![](./images/user_params_virus.png)
+  <img src="./images/user_params_virus.png" width="100%">
 
 User parameters are general model parameters (as opposed to Cell Types | Custom Data parameters which are specific to cell data). User parameters are accessed in your model's C++ code. Search for `parameters.ints, parameters.doubles`, etc, in various sample projects' `custom.cpp` files. You can click/drag a column separator in this table to change its width. (Unfortunately, that column width information is not retained if you exit the Studio and start it again)
 
@@ -210,7 +210,7 @@ x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 ---
 # Run
 
-![](./images/run_virus.png)
+<img src="./images/run_virus.png" width="70%">
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
