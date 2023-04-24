@@ -57,7 +57,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Config Basics
 
-<img src="./images/config_virus.png" width="70%">
+<img src="./images/config_virus.png" width="100%">
 
 
 * === Domain ===
@@ -80,7 +80,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Microenvironment
 
-<img src="./images/microenv_virus.png" width="70%">
+<img src="./images/microenv_virus.png" width="100%">
 * Define the substrates (or signals) used in the model
 * Selecting one in the box on the left will update the parameters on the right.
 * The `New` button will create a new substrate with default parameters
@@ -96,7 +96,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Cell Types
 
-<img src="./images/celltypes_virus.png" width="70%">
+<img src="./images/celltypes_virus.png" width="100%">
 
 * This tab is used to define the phenotype for each cell type and therefore exposes a large number of parameters. Note that it has subtabs, one for each phenotypic cell behavior.
 * ...
@@ -210,7 +210,7 @@ x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 ---
 # Run
 
-<img src="./images/run_virus.png" width="70%">
+<img src="./images/run_virus.png" width="100%">
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
