@@ -52,7 +52,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 
 ## NOTE: the model (.xml) being loaded from the Studio's `/config` folder has been "flattened". The Studio cannot properly parse a legacy "hierarchical" .xml from PhysiCell where a `cell_definition` may refer to a "parent" in its attributes.
 
-<img src="./images/menu_file_sample_virus.png" width="30%">
+<img src="./images/menu_file_sample_virus.png" width="10%">
 
 ---
 ## Config Basics
@@ -80,7 +80,8 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Microenvironment
 
-![](./images/microenv_virus.png)
+<img src="./images/microenv_virus.png" width="20%">
+
 * Define the substrates (or signals) used in the model
 * Selecting one in the box on the left will update the parameters on the right.
 * The `New` button will create a new substrate with default parameters
@@ -96,7 +97,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## Cell Types
 
-![](./images/celltypes_virus.png)
+<img src="./images/celltypes_virus.png" width="20%">
 
 * This tab is used to define the phenotype for each cell type and therefore exposes a large number of parameters. Note that it has subtabs, one for each phenotypic cell behavior.
 * ...
@@ -162,7 +163,8 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 ---
 ## User Params
 
-![](./images/user_params_virus.png)
+<img src="./images/user_params_virus.png" width="20%">
+
 
 User parameters are general model parameters (as opposed to Cell Types | Custom Data parameters which are specific to cell data). User parameters are accessed in your model's C++ code. Search for `parameters.ints, parameters.doubles`, etc, in various sample projects' `custom.cpp` files. You can click/drag a column separator in this table to change its width. (Unfortunately, that column width information is not retained if you exit the Studio and start it again)
 
@@ -188,9 +190,7 @@ In the following, we create ICs for two cell types, each in a different region.
 * if we make a mistake for one of the Plots, use `Undo last`
 * provide a unique .csv filename instead of `cell.csv` if you want, and click `Save`
 
-<img src="./images/ics_disk_hex.png" width="20%">
-<img src="./images/ics_disk_rect.png" width="20%">
-
+<img src="./images/ics_disk_hex.png" width="20%"><img src="./images/ics_disk_rect.png" width="20%">
 
 The .csv file should contain content that looks similar to the following. Note that since we had `use cell type names` checked, each line will include the name of that cell type. Also, in this case, there will be a single header line at the top that starts with `x` (for the x-coordinate column). If we don't check the `use cell type names`, this is the older style of .csv and it will use cell IDs (integer values) instead of cell type names. And there will not be a header line.
 ```
@@ -210,7 +210,7 @@ x,y,z,type,volume,cycle entry,custom:GFP,custom:sample
 ---
 # Run
 
-![](./images/run_virus.png)
+<img src="./images/run_virus.png" width="20%">
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
@@ -224,7 +224,7 @@ Alternatively, you can plot cells' scalar values when the `.mat` radio button is
 
 We show four snapshots of .svg data during the time series of the virus-macrophage simulation.
 
-<img src="./images/plot_virus_t0.png" width="10%"><img src="./images/plot_virus_t1.png" width="20%"><img src="./images/plot_virus_t2.png" width="20%"><img src="./images/plot_virus_t3.png" width="20%">
+<img src="./images/plot_virus_t0.png" width="20%"><img src="./images/plot_virus_t1.png" width="20%"><img src="./images/plot_virus_t2.png" width="20%"><img src="./images/plot_virus_t3.png" width="20%">
 
 ---
 <img src="./images/plot_virus_pressure.png" width="20%">
@@ -233,7 +233,7 @@ Plotting the cells' `pressure` scalar (.mat) field.
 
 ---
 
-<img src="./images/population_plot_virus.png" width="50%">
+<img src="./images/population_plot_virus.png" width="20%">
 
 The `Population plot` button will plot the cell (types) populations over the entire simulation (or however far it has currently gotten). This will appear in a separate popup window (and sometimes may get hidden behind the main Studio window).
 
