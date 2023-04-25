@@ -242,7 +242,7 @@ The `Population plot` button will generate a time series plot of the cell (types
 ---
 # Plot 3D
 
-It is also possible to run and visualize results from a 3D model. However, the Studio must be *started* with a special argument: `-3` or `--3D`. It is not currently possible to switch between 2D and 3D plotting in the same Studio session.
+It is also possible to run and visualize results from a 3D model. However, the Studio must be *started* with a special argument: `-3` or `--3D`. It is not currently possible to switch between 2D and 3D plotting in the same Studio session. In 2D, as we've seen, cells are displayed as circles and substrates as colored planes. In 3D, cells are displayed as spheres and substrates are (typically) displayed using orthogonal slicing planes. To help visualize a crowded domain of cells, it is also possible to hide regions using clipping planes (see the `View` menu). Currently, we provide a minimal, but hopefully useful set of options for plotting in 3D. More options will be added. We also provide interfaces to [community tools](#Community-Tools) to visualize output files from a PhysiCell simulation.
 ```
 # if running from the Studio root folder:
 python bin/studio.py -e project -c config/simple3D_test1.xml -3
@@ -250,9 +250,12 @@ python bin/studio.py -e project -c config/simple3D_test1.xml -3
 
 <img src="./images/plot3D_cell_types.png" width="70%">
 
-* by default, we plot cells colored by cell type
+* by default, we plot cells colored by cell typea (note the colorbar is not yet labeled for discrete values)
 
 * use the `View` menu to see options for displaying and filtering 3D results
+
+<img src="./images/filters3D.png" width="30%">
+
 
 ---
 
@@ -300,6 +303,20 @@ For 3D plotting, the following are useful commands to affect the display and mod
 ---
 # Community Tools
 
-The Studio provides interfaces to other tools used in the broader modeling community. For example, it is possible to export some of your PhysiCell output data into a format for [Simularium](https://simularium.allencell.org/) and then load that file into their [viewer](https://simularium.allencell.org/viewer) to visualilze in your browser. 
+The Studio provides interfaces to other tools used in the broader modeling community. 
+  
+## Simularium
+  
+[Simularium](https://simularium.allencell.org/) offers interactive visualization in a browser. We have collaborated with their team to provide scripts that will convert PhysiCell output files into a compressed, binary file that can be loaded into their [viewer](https://simularium.allencell.org/viewer). The Simularium viewer offers a complementary set of options to the Studio.
 
 <img src="./images/simularium_test1.png" width="70%">
+
+---
+  
+## ParaView
+  
+[ParaView](https://www.paraview.org/) is a popular open source application for scientific visualization. We provide scripts that assist with loading PhysiCell data. More coming...
+
+  
+[ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
+
