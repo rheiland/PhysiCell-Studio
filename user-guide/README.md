@@ -235,14 +235,14 @@ Plotting the cells' `pressure` scalar (.mat) field.
 
 <img src="./images/population_plot_virus.png" width="50%">
 
-The `Population plot` button will plot the cell (types) populations over the entire simulation (or however far it has currently gotten). This will appear in a separate popup window (and sometimes may get hidden behind the main Studio window).
+The `Population plot` button will generate a time series plot of the cell (types) populations. This will appear in a separate popup window (and sometimes may get hidden behind the main Studio window).
 
 [ [top](#physicell-studio-user-guide)] [[Config Basics](#config-basics)] [[Microenvironment](#microenvironment)] [[Cell Types](#cell-types)] [[User Params](#user-params)] [[ICs](#ics-initial-conditions)] [[Run](#run)] [[Plot](#plot)]
 
 ---
 # Plot 3D
 
-While not quite as advanced as 2D plotting, it is also possible to run and visualize results from a 3D model. The UI for 3D plots is continuing to evolve. To run a 3D model, you need to use the `-3` or `--3D` argument, e.g.,
+It is also possible to run and visualize results from a 3D model. However, the Studio must be *started* with a special argument: `-3` or `--3D`. It is not currently possible to switch between 2D and 3D plotting in the same Studio session.
 ```
 # if running from the Studio root folder:
 python bin/studio.py -e project -c config/simple3D_test1.xml -3
@@ -252,7 +252,7 @@ python bin/studio.py -e project -c config/simple3D_test1.xml -3
 
 * by default, we plot cells colored by cell type
 
-* use the `View` menu to toggle display of the 3D axes
+* use the `View` menu to see options for displaying and filtering 3D results
 
 ---
 
