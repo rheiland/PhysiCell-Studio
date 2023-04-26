@@ -252,7 +252,7 @@ python bin/studio.py -e project -c config/simple3D_test1.xml -3
 
 <img src="./images/plot3D_cell_types.png" width="70%">
 
-* by default, we plot cells colored by cell typea (note the colorbar is not yet labeled for discrete values)
+* by default, we plot cells colored by cell type (note the colorbar is not yet labeled for discrete values)
 
 * use the `View` menu to see options for displaying and filtering 3D results
 
