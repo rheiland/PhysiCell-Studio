@@ -280,7 +280,7 @@ For 3D plotting, the following are useful commands to affect the display and mod
 
   * Keypress j / Keypress t: toggle between joystick (position sensitive) and trackball (motion sensitive) styles. In joystick style, motion occurs continuously as long as a mouse button is pressed. In trackball style, motion occurs when the mouse button is pressed and the mouse pointer moves.
 
-  * Keypress c / Keypress a: toggle between camera and actor modes. In camera mode, mouse events affect the camera position and focal point. In actor mode, mouse events affect the actor that is under the mouse pointer.
+  * (Warning: you should just stay in camera mode) Keypress c / Keypress a: toggle between camera and actor modes. In camera mode, mouse events affect the camera position and focal point. In actor mode, mouse events affect the actor that is under the mouse pointer.
 
   * Button 1: rotate the camera around its focal point (if camera mode) or rotate the actor around its origin (if actor mode). The rotation is in the direction defined from the center of the renderer's viewport towards the mouse position. In joystick mode, the magnitude of the rotation is determined by the distance the mouse is from the center of the render window.
 
@@ -292,13 +292,14 @@ For 3D plotting, the following are useful commands to affect the display and mod
 
   * Keypress f: fly to the picked point
   
-  * Keypress p: perform a pick operation. The render window interactor has an internal instance of vtkCellPicker that it uses to pick.
-
   * Keypress r: reset the camera view along the current view direction. Centers the actors and moves the camera so that all actors are visible.
 
   * Keypress s: modify the representation of all actors so that they are surfaces.
 
   * Keypress w: modify the representation of all actors so that they are wireframe.
+  
+  * (Warning: avoid) Keypress p: perform a pick operation. The render window interactor has an internal instance of vtkCellPicker that it uses to pick.
+
   
 </details>
 
