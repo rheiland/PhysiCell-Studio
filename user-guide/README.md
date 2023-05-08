@@ -105,7 +105,7 @@ We load a PhysiCell sample model, the virus-macrophage, to illustrate the conten
 
 ---
 <details>
-  <summary><h3>Expand to show Cell Types subtabs</h3></summary>
+  <summary><h3>Expand to show Cell Types phenotype subtabs</h3></summary>
 
 [[cycle](#cycle)] [[death](#death)] [[volume](#volume)] [[mechanics](#mechanics)] [[motility](#motility)] [[secretion](#secretion)] [[interactions](#interactions)] [[intracellular](#intracellular)] [[custom-data](#custom-data)] 
 
@@ -244,7 +244,7 @@ The `Population plot` button will generate a time series plot of the cell (types
 ---
 # Plot 3D
 
-It is also possible to run and visualize results from a 3D model. However, the Studio must be *started* with a special argument: `-3` or `--3D`. It is not currently possible to switch between 2D and 3D plotting in the same Studio session. In 2D, as we've seen, cells are displayed as circles and substrates as colored planar meshes. In 3D, cells are displayed as spheres and substrates are (typically) displayed using orthogonal slicing planes. To help visualize a crowded domain of cells, it is also possible to hide regions using clipping planes (see the `View` menu). Currently, we provide a minimal, but hopefully useful set of options for plotting in 3D. More options will be added. We also provide interfaces to [community tools](#Community-Tools) to visualize output files from a PhysiCell simulation.
+It is also possible to run and visualize results from a 3D model. However, the Studio must be *started* with a special argument: `-3` or `--3D`. It is not currently possible to switch between 2D and 3D plotting in the same Studio session. In 2D, as we've seen, cells are displayed as circles and substrates as colored planar meshes. In 3D, cells are displayed as spheres and substrates/signals are displayed using orthogonal slicing planes and/or a contour surface. To help visualize a crowded domain of cells, it is also possible to hide orthogonal regions using clipping planes (see the `View` menu). Currently, we provide a minimal, but hopefully useful set of options for plotting in 3D. More options will be added. We also provide interfaces to [community tools](#Community-Tools) to visualize output files from a PhysiCell simulation.
 ```
 # if running from the Studio root folder:
 python bin/studio.py -e project -c config/simple3D_test1.xml -3
